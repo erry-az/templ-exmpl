@@ -1,0 +1,11 @@
+package layout
+
+import "github.com/erry-az/templ-exmpl/view/component"
+
+templ Counter(global, session int) {
+    @Base() {
+        <main class="container">
+            @component.Counter(global, session)
+        </main>
+    }
+}

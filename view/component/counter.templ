@@ -1,0 +1,20 @@
+package component
+
+import "strconv"
+
+templ Counter(global, session int) {
+	<form id="countsForm" action="/" method="POST" hx-post="/" hx-select="#countsForm" hx-swap="outerHTML">
+		<div class="grid">
+			<article>
+                <h2>Global</h2>
+				<h4>{ strconv.Itoa(global) }</h4>
+				<div><button class="primary" type="submit" name="add" value="global">+1</button></div>
+			</article>
+			<article>
+				<h2>Session</h2>
+                <h4>{ strconv.Itoa(session) }</h4>
+				<div><button class="contrast"type="submit" name="add" value="session">+1</button></div>
+			</article>
+		</div>
+	</form>
+}
